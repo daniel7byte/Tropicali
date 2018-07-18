@@ -16,7 +16,9 @@
 
   if(isset($_FILES["file"]["name"])) {
 
-    $extension = strtolower(end(explode(".", $_FILES["file"]["name"])));
+
+    $extension = explode(".", $_FILES["file"]["name"]);
+    $extension = strtolower(end($extension));
     
     if($extension != "php"){
       
