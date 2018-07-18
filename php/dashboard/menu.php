@@ -59,6 +59,20 @@
             <li class="sidebar-subnav__item"><a class="sidebar-subnav__link" href="zones_new.php">Crear nueva</a></li>
           </ul>
         </li>
+        <li class="sidebar-nav__item">
+          <a class="sidebar-nav__link" href="report_list.php">
+            <span class="sidebar-nav__item_icon ua-icon-list"></span>
+            <span class="sidebar-nav__item-text">Reportes de lectura</span>
+          </a>
+        </li>
+      <?php endif; ?>
+      <?php if($_SESSION['role'] == "USER"): ?>
+        <li class="sidebar-nav__item">
+          <a class="sidebar-nav__link" href="report.php?id=<?=$_SESSION['id']?>">
+            <span class="sidebar-nav__item_icon ua-icon-check"></span>
+            <span class="sidebar-nav__item-text">Reportar Lectura</span>
+          </a>
+        </li>
       <?php endif; ?>
     </ul>
   </div>
