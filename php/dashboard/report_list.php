@@ -103,7 +103,7 @@
                   require_once("config/parameters.php");
                   require_once("config/connection.php");
 
-                  $query = $mysql->prepare("SELECT * FROM repost_reading ORDER BY id DESC");
+                  $query = $mysql->prepare("SELECT * FROM report_reading ORDER BY id DESC");
                   $query->execute();
                   $result = $query->fetchAll();
 
