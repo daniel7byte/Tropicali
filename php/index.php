@@ -15,13 +15,12 @@
 
     foreach ($result as $row):
   ?>
-  <tr>
-    <td><?=date_format(date_create($row['date']), 'd-m-Y')?></td>
-    <td><?=$row['title']?></td>
-    <td><?=$row['description']?></td>
-    <td><?=$row['type']?></td>
-  </tr>
-  <br>
+  <ul>
+    <li><?=date_format(date_create($row['date']), 'd-m-Y')?></li>
+    <li><?=$row['title']?></li>
+    <li><?=$row['description']?></li>
+    <li><?=$row['type']?></li>
+  </ul>
   <?php endforeach; ?>
 
 </body>

@@ -16,7 +16,7 @@
   <meta name="description" content="">
   <meta name="keywords" content="">
   <link rel="shortcut icon" href="img/favicon.png">
-  <title>Iniciar / Tropicali</title>
+  <title>Gestion Tropicali</title>
 
   
     <link rel="stylesheet" href="fonts/open-sans/style.min.css"> <!-- common font  styles  -->
