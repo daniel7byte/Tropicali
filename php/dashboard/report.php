@@ -9,9 +9,23 @@
   require_once("config/parameters.php");
   require_once("config/connection.php");
 
-  $query = $mysql->prepare("INSERT INTO report_reading (id_user) VALUES (:id_user)");
+  $query = $mysql->prepare("SELECT * FROM report_reading WHERE id_user=:id_user ORDER BY id DESC");
   $query->execute([
       ':id_user' => $_GET['id']
   ]);
+  $result = $query->fetchAll();
+  foreach ($result as $row) {
+    $ultimaFecha = date_create($row['date']);
+    break;
+  }
 
-  if($query) header('location: home.php');
+  if (date_format($ultimaFecha, 'd-m-Y') != date('d-m-Y')) {
+    $query = $mysql->prepare("INSERT INTO report_reading (id_user) VALUES (:id_user)");
+    $query->execute([
+        ':id_user' => $_GET['id']
+    ]);
+
+    if($query) header('location: home.php'); 
+  } else {
+    if($query) header('location: home.php'); 
+  }
