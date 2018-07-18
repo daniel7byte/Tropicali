@@ -27,5 +27,5 @@
 
     echo "Reporte creado";
   } else {
-    echo "Ya tienes un reporte de hoy";
+    echo "Ya tienes un reporte del dia de hoy";
   }
