@@ -11,7 +11,7 @@
 
   $query = $mysql->prepare("SELECT * FROM report_reading WHERE id_user=:id_user ORDER BY id DESC");
   $query->execute([
-      ':id_user' => $_GET['id']
+      ':id_user' => $_POST['id']
   ]);
   $result = $query->fetchAll();
   foreach ($result as $row) {
@@ -22,10 +22,10 @@
   if (date_format($ultimaFecha, 'd-m-Y') != date('d-m-Y')) {
     $query = $mysql->prepare("INSERT INTO report_reading (id_user) VALUES (:id_user)");
     $query->execute([
-        ':id_user' => $_GET['id']
+        ':id_user' => $_POST['id']
     ]);
 
-    if($query) header('location: home.php'); 
+    echo "Reporte creado";
   } else {
-    if($query) header('location: home.php'); 
+    echo "Ya tienes un reporte de hoy";
   }

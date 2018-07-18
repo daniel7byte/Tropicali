@@ -68,11 +68,25 @@
       <?php endif; ?>
       <?php if($_SESSION['role'] == "USER"): ?>
         <li class="sidebar-nav__item">
-          <a class="sidebar-nav__link" href="report.php?id=<?=$_SESSION['id']?>">
+          <a class="sidebar-nav__link" onclick="create_report(<?=$_SESSION['id']?>);">
             <span class="sidebar-nav__item_icon ua-icon-check"></span>
             <span class="sidebar-nav__item-text">Reportar Lectura</span>
           </a>
         </li>
+        <script>
+          function create_report(id) {
+            $.ajax({
+            type: 'POST',
+              url: 'report.php',
+              data: {
+                id: id
+              },
+              success: function(result){
+                alert(result);
+              }
+            });
+          }
+        </script>
       <?php endif; ?>
     </ul>
   </div>
