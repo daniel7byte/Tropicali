@@ -29,8 +29,8 @@
       <?php if($_SESSION['role'] == "ADMIN"): ?>
         <li class="sidebar-nav__item">
           <a class="sidebar-nav__link" href="users.php">
-            <span class="sidebar-nav__item_icon ua-icon-profile"></span>
-            <span class="sidebar-nav__item-text">Usuarios</span>
+            <span class="mdi mdi-account-multiple sidebar-section-nav__item-icon"></span>
+            <span class="sidebar-nav__item-text">Admin - Usuarios</span>
           </a>
           <ul class="sidebar-subnav" style="display: none;">
             <li class="sidebar-subnav__item"><a class="sidebar-subnav__link" href="users.php">Usuarios</a></li>
@@ -40,7 +40,7 @@
         <li class="sidebar-nav__item">
           <a class="sidebar-nav__link" href="storage.php">
             <span class="sidebar-nav__item_icon ua-icon-folder"></span>
-            <span class="sidebar-nav__item-text">Documentos</span>
+            <span class="sidebar-nav__item-text">Admin - Documentos</span>
           </a>
           <ul class="sidebar-subnav" style="display: none;">
             <li class="sidebar-subnav__item"><a class="sidebar-subnav__link" href="storage.php">Documentos</a></li>
@@ -50,7 +50,7 @@
         <li class="sidebar-nav__item">
           <a class="sidebar-nav__link" href="news.php">
             <span class="sidebar-nav__item_icon ua-icon-calendar"></span>
-            <span class="sidebar-nav__item-text">Noticias</span>
+            <span class="sidebar-nav__item-text">Admin - Noticias</span>
           </a>
           <ul class="sidebar-subnav" style="display: none;">
             <li class="sidebar-subnav__item"><a class="sidebar-subnav__link" href="news.php">Noticia</a></li>
@@ -60,7 +60,7 @@
         <li class="sidebar-nav__item">
           <a class="sidebar-nav__link" href="zones.php">
             <span class="sidebar-nav__item_icon ua-icon-tasks"></span>
-            <span class="sidebar-nav__item-text">Zonas</span>
+            <span class="sidebar-nav__item-text">Admin - Zonas</span>
           </a>
           <ul class="sidebar-subnav" style="display: none;">
             <li class="sidebar-subnav__item"><a class="sidebar-subnav__link" href="zones.php">Zonas</a></li>
@@ -96,6 +96,18 @@
           }
         </script>
       <?php endif; ?>
+      <li class="sidebar-nav__item">
+        <a class="sidebar-nav__link" href="my_account.php">
+          <span class="sidebar-nav__item_icon ua-icon-person"></span>
+          <span class="sidebar-nav__item-text">Cambiar contraseña</span>
+        </a>
+      </li>
+      <li class="sidebar-nav__item">
+        <a class="sidebar-nav__link" href="auth/logout.php">
+          <span class="sidebar-nav__item_icon ua-icon-close"></span>
+          <span class="sidebar-nav__item-text">Cerrar sesión</span>
+        </a>
+      </li>
     </ul>
   </div>
 
