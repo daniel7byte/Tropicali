@@ -14,6 +14,13 @@
   require_once("config/parameters.php");
   require_once("config/connection.php");
 
-  $query = $mysql->query('UPDATE news SET title="'.$_POST['title'].'", description="'.$_POST['description'].'", type="'.$_POST['type'].'" WHERE id="'.$_POST['id'].'"');
+  $query = $mysql->prepare("UPDATE news SET title=:title, description=:description, type=:type WHERE id=:id");
+  
+  $query->execute([
+    ':title' => $_POST['title'],
+    ':description' => $_POST['description'],
+    ':type' => $_POST['type'],
+    ':id' => $_POST['id']
+  ]);
 
   if($query) header('location: news.php');

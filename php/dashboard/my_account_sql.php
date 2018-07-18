@@ -19,7 +19,12 @@
   ];
 
   $hash = password_hash($_POST['password'], PASSWORD_BCRYPT, $options);
-
-  $query = $mysql->query('UPDATE users SET password="'.$hash.'" WHERE id="'.$_POST['id'].'"');
+  
+  $query = $mysql->prepare("UPDATE users SET password=:hash WHERE id=:id");
+  
+  $query->execute([
+    ':hash' => $hash,
+    ':id' => $_POST['id']
+  ]);
 
   if($query) header('location: my_account.php');
