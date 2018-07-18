@@ -15,11 +15,9 @@
 
     foreach ($result as $row):
   ?>
-  <ul>
-    <li><?=date_format(date_create($row['date']), 'd-m-Y')?></li>
+  <ul class="notipub">
     <li><?=$row['title']?></li>
     <li><?=$row['description']?></li>
-    <li><?=$row['type']?></li>
   </ul>
   <?php endforeach; ?>
 
