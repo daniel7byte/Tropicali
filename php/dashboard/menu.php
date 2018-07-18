@@ -13,10 +13,18 @@
           <span class="sidebar-nav__item_icon ua-icon-home"></span>
           <span class="sidebar-nav__item-text">Inicio</span>
         </a>
-        <ul class="sidebar-subnav" style="display: none;">
-          <li class="sidebar-subnav__item"><a class="sidebar-subnav__link" href="home.php">Documentos</a></li>
-          <li class="sidebar-subnav__item"><a class="sidebar-subnav__link" href="home_news.php">Noticias</a></li>
-        </ul>
+      </li>
+      <li class="sidebar-nav__item">
+        <a class="sidebar-nav__link" href="home_storage.php">
+          <span class="sidebar-nav__item_icon ua-icon-folder"></span>
+          <span class="sidebar-nav__item-text">Documentos</span>
+        </a>
+      </li>
+      <li class="sidebar-nav__item">
+        <a class="sidebar-nav__link" href="home_news.php">
+          <span class="sidebar-nav__item_icon ua-icon-calendar"></span>
+          <span class="sidebar-nav__item-text">Noticias</span>
+        </a>
       </li>
       <?php if($_SESSION['role'] == "ADMIN"): ?>
         <li class="sidebar-nav__item">

@@ -118,49 +118,6 @@
           </div>
 
         </div>
-
-        <div class="m-content">
-
-          <div class="page-content__header">
-            <div>
-              <h2 class="page-content__header-heading">Noticias</h2>
-            </div>
-          </div>
-          <div class="m-datatable">
-            <table id="datatable" class="table table-striped">
-              <thead>
-              <tr>
-                <th>Fecha</th>
-                <th>Titulo</th>
-                <th>Descripción</th>
-                <th>Tipo</th>
-              </tr>
-              </thead>
-              <tbody>
-                <?php
-
-                  require_once("config/parameters.php");
-                  require_once("config/connection.php");
-
-                  $query = $mysql->prepare("SELECT * FROM news ORDER BY id DESC");
-                  $query->execute();
-                  $result = $query->fetchAll();
-
-                  foreach ($result as $row):
-                ?>
-                <tr>
-                  <td><?=date_format(date_create($row['date']), 'd-m-Y')?></td>
-                  <td><?=$row['title']?></td>
-                  <td><?=$row['description']?></td>
-                  <td><?=$row['type']?></td>
-                </tr>
-                <?php endforeach; ?>
-
-              </tbody>
-            </table>
-          </div>
-
-        </div>
         
       </div>
 
